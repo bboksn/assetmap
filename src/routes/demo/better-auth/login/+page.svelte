@@ -57,3 +57,11 @@
 		>Sign in with Google</button
 	>
 </form>
+
+
+
+
+	<form method="post" action="?/signInEmail" use:enhance>
+		<input type="email" value="Email Here">
+	</form>
+	
