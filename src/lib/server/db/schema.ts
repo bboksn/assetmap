@@ -4,7 +4,7 @@ export const task = pgTable('task', {
 	title: text('title').notNull(),
 	priority: integer('priority').notNull().default(1)
 });
-export * from './auth.schema';
+export * from './auth.schema.ts';
 
 //location table to join with map and asset
 export const location = pgTable('location', {
