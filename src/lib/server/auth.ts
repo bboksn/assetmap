@@ -4,7 +4,7 @@ import { sveltekitCookies } from 'better-auth/svelte-kit';
 import { env } from '$env/dynamic/private';
 import { getRequestEvent } from '$app/server';
 import { db } from '$lib/server/db';
-
+import { organization } from "better-auth/plugins";
 export const auth = betterAuth({
 	baseURL: env.ORIGIN,
 	secret: env.BETTER_AUTH_SECRET,
@@ -16,5 +16,5 @@ export const auth = betterAuth({
 			clientSecret: env.GITHUB_CLIENT_SECRET
 		}
 	},
-	plugins: [sveltekitCookies(getRequestEvent)] // make sure this is the last plugin in the array
+	plugins: [organization(),sveltekitCookies(getRequestEvent)] // make sure this is the last plugin in the array
 });

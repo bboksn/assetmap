@@ -21,6 +21,7 @@ export const map = pgTable('map', {
 export const asset = pgTable('asset', {
 	id: uuid('id').primaryKey().defaultRandom(),
 	name: text('name').notNull(),
+	description: text('description'),
 	locationID: uuid('location_id').references(() => location.id).notNull(),
 	mapID: uuid('map_id').references(() => map.id).notNull(),  // New: link to specific map
 	x: doublePrecision('x').notNull(),
